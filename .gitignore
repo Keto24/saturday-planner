@@ -1,0 +1,47 @@
+# Environment variables and secrets
+.env
+*.env
+google_token.json
+google_credentials.json
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+*.log
+server_debug.log
+server.log
+
+# Agent memory
+agent_memory.json
+
+# Test files with secrets
+test_sms.py
+test_sms_formats.py
+test_sms_real.py
+debug_sms_web.py
