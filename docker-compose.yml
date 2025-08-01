@@ -1,0 +1,54 @@
+version: '3.8'
+
+services:
+  saturday-planner:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      # NVIDIA AI Model Access
+      - NEMO_ENDPOINT=${NEMO_ENDPOINT}
+      - NEMO_API_KEY=${NEMO_API_KEY}
+      
+      # Weather Service
+      - WEATHER_API_KEY=${WEATHER_API_KEY}
+      - WEATHER_SERVICE=${WEATHER_SERVICE}
+      
+      # Places Search
+      - PLACES_API_KEY=${PLACES_API_KEY}
+      - PLACES_SERVICE=${PLACES_SERVICE}
+      
+      # Google Calendar
+      - GOOGLE_CLIENT_ID=${GOOGLE_CLIENT_ID}
+      - GOOGLE_CLIENT_SECRET=${GOOGLE_CLIENT_SECRET}
+      - GOOGLE_REDIRECT_URI=${GOOGLE_REDIRECT_URI}
+      - DEFAULT_CALENDAR_ID=${DEFAULT_CALENDAR_ID}
+      - OAUTH_ENVIRONMENT=production
+      
+      # Notifications
+      - NOTIFICATION_SERVICE=${NOTIFICATION_SERVICE}
+      - NOTIFICATION_API_KEY=${NOTIFICATION_API_KEY}
+      - NOTIFICATION_AUTH_TOKEN=${NOTIFICATION_AUTH_TOKEN}
+      - NOTIFICATION_FROM=${NOTIFICATION_FROM}
+      - NOTIFICATION_TO=${NOTIFICATION_TO}
+      
+      # Memory and Preferences
+      - MEMORY_TYPE=${MEMORY_TYPE}
+      - MEMORY_PATH=/app/data/agent_memory.json
+      - DEFAULT_ZIP_CODE=${DEFAULT_ZIP_CODE}
+      - DEFAULT_RADIUS_MILES=${DEFAULT_RADIUS_MILES}
+      - DEFAULT_MAX_PRICE=${DEFAULT_MAX_PRICE}
+    
+    volumes:
+      - agent_data:/app/data
+    
+    restart: unless-stopped
+    
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  agent_data:

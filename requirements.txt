@@ -1,0 +1,20 @@
+# Core AI Agent Framework
+langgraph>=0.2.0              # This is like the "brain" - helps AI agents think step by step
+langchain>=0.3.0               # Connects our agent to AI models and tools
+langchain-nvidia-ai-endpoints>=0.3.0  # Specifically for NVIDIA's Nemotron model
+
+# External Service Connections
+requests>=2.31.0               # For talking to weather APIs, restaurant APIs, etc.
+httpx>=0.25.0                  # Another way to talk to web services (faster)
+python-dotenv>=1.0.0           # Keeps our API keys safe in a separate file
+
+# Web Application
+fastapi>=0.104.0               # Creates a web interface so people can use our agent
+uvicorn>=0.24.0                # Runs the web server
+
+# Data Handling
+pydantic>=2.5.0
+google-auth>=2.15.0
+google-auth-oauthlib>=0.7.1
+google-api-python-client>=2.70.0
+twilio>=8.2.0                # Makes sure data follows the right format

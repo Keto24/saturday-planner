@@ -1,0 +1,33 @@
+# Don't include these files in Docker build
+.env
+*.log
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+.coverage
+.pytest_cache/
+.DS_Store
+.vscode/
+*.swp
+*.swo
+*~
+
+# Git files
+.git/
+.gitignore
+
+# Documentation and guides
+*.md
+SaturdayPlanner_Development_Guide.md
+
+# Test files
+test_*.py
+debug_*.py
+
+# Local development files
+google_token.json
+agent_memory.json
+server_debug.log
