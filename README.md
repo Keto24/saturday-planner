@@ -12,6 +12,24 @@ Every Saturday, the agent will:
 5. 📅 Schedule the best option in your calendar
 6. 📱 Send you a notification with the plan
 
+## Features
+
+- **Autonomous Planning**: Uses ReAct (Reasoning + Acting) pattern for step-by-step decision making
+- **Real API Integrations**: Weather, Google Places, Calendar, SMS notifications
+- **Smart Filtering**: Considers weather, ratings, and your past preferences
+- **Learning Memory**: Remembers what you liked before
+- **Web Interface**: Beautiful UI for easy interaction
+
+## Tech Stack
+
+- 🧠 **AI Model**: NVIDIA Nemotron (llama-3.3-nemotron-super-49b-v1)
+- 🔧 **Framework**: NeMo Agent Toolkit + LangGraph
+- 🌐 **Web**: FastAPI + HTML/CSS/JavaScript
+- 📅 **Calendar**: Google Calendar API with OAuth
+- 📱 **SMS**: Twilio integration
+- ☁️ **Weather**: WeatherAPI.com
+- 📍 **Places**: Google Places API
+
 ## Project Structure
 
 ```
@@ -25,7 +43,7 @@ saturday_planner/
 └── requirements.txt    # The agent's "dependencies" - what software it needs
 ```
 
-## Setup Instructions
+## Quick Start
 
 1. **Install Dependencies:**
    ```bash
